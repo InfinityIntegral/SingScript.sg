@@ -1,0 +1,57 @@
+import fontforge
+
+# Open input file and error log
+infile = open("path\\to\\root\\kerningdata.txt", "r")
+errlog = open("path\\to\\root\\errorlog.txt", "w")
+
+# Get active font
+f = fontforge.activeFont()
+
+# Initialize data structures
+db = []
+cs = []
+
+# Read kerning data from file
+while True:
+    line = infile.readline()
+    if not line:
+        break
+    c1, c2, v = map(int, line.split())
+
+    # Add kerning value to db
+    db.append(int(v))
+
+    if c1 == 65:  # If the first character is 'A' (Unicode 65)
+        # Try to find the character with unicode c2
+        found = False
+        for i in range(128):  # Assuming there are at most 128 glyphs to check
+            glyph = f[i]
+            if glyph.unicode == c2:
+                cs.append(glyph.glyphname)
+                found = True
+                break
+        if not found:
+            errlog.write(f"Cannot find char {c2}\n")
+
+# Create a lookup for kerning
+f.addLookup("kern", "gpos_pair", (), ())
+
+# Prepare kerning class data
+vchars = [(cs[i],) for i in range(len(cs))]  # Wrap each glyph name in a tuple
+
+# Log the number of classes and data points
+errlog.write(f"{len(vchars)} kerning classes each with 1 char\n")
+
+# Convert list to a Python tuple
+tchars = tuple(vchars)
+tvals = tuple(db)
+
+# Log the number of kerning data points
+errlog.write(f"{len(tvals)} kerning data points\n")
+
+# Add the kerning class to the font
+f.addKerningClass("kern", "kernsubtable", tchars, tchars, tvals)
+
+# Close the files
+infile.close()
+errlog.close()

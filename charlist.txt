@@ -1,0 +1,737 @@
+SingScript Core:
+     0021-007E: basic ASCII
+          0021: factorial sign
+		0022: double quote
+		0023: hashtag
+		0024: dollar sign
+		0025: percentage sign
+		0026: and sign
+		0027: single quote
+		0028: opening bracket
+		0029: closing bracket
+		002A: asterisk
+		002B: plus sign
+		002C: comma
+		002D: minus sign
+		002E: decimal dot
+		002F: forward slash
+	0030 - 0039: numbers 0 to 9
+		003A: colon
+		003B: semicolon
+		003C: less than
+		003D: equals
+		003E: more than
+		003F: question mark
+		0040: at sign
+		0041 - 005A: capital letters
+		005B: opening square bracket
+		005C: back slash
+		005D: closing square bracket
+		005E: explicit exponent sign
+		005F: underscore
+		0060: backtick
+		0061 - 007A: small letters
+		007B: opening brace
+		007C: or sign
+		007D: closing brace
+		007E: tilde
+	00A1-00BF (known chars): ASCII-like punctuation
+		00A2: cent sign
+		00AA: exponent a *
+		00AC: not
+		00AF: conjugate
+		00B0: degree
+		00B1: plus minus
+		00B2: exponent 2
+		00B3: exponent 3
+		00B5: micro-
+		00B7: cdot *
+		00B9: exponent 1
+		00BA: exponent o *
+		00D7: multiplication cross
+		00F7: division sign
+		2026: ellipsis
+	E000: version number
+
+SingScript 0:
+     E100 - E1FF: Singaporean culture
+		E100: Singapore flag emoji
+		E101: .sg domain sign
+	E200 - E2FF: 05524F icons
+		E200: 05524F.sg logo
+		E201: filled star
+		E202: outline star
+		E203: sqrt(-1) sign
+	E300 - E3FF: selected emojis
+		E300: perfect score emoji
+		E301: correct emoji
+		E302: wrong emoji
+		E303: heart emoji filled
+		E304: heart emoji outline
+		E305: OK emoji
+		E306: tick emoji
+		E307: cross emoji
+	E001: version number
+
+SingScript 1:
+     2070-209C: exponents and subscripts
+          2070: exponent 0
+		2071: exponent i
+		2074: exponent 4
+		2075: exponent 5
+		2076: exponent 6
+		2077: exponent 7
+		2078: exponent 8
+		2079: exponent 9
+		207A: exponent plus
+		207B: exponent minus
+		207C: exponent equals
+		207D: exponent opening bracket
+		207E: exponent closing bracket
+		207F: exponent n
+		2080: subscript 0
+		2081: subscript 1
+		2082: subscript 2
+		2083: subscript 3
+		2084: subscript 4
+		2085: subscript 5
+		2086: subscript 6
+		2087: subscript 7
+		2088: subscript 8
+		2089: subscript 9
+		208A: subscript plus
+		208B: subscript minus
+		208C: subscript equals
+		208D: subscript opening bracket
+		208E: subscript closing bracket
+		2090: subscript a
+		2091: subscript e
+		2092: subscript o
+		2093: subscript x
+		2095: subscript h
+		2096: subscript k
+		2097: subscript l
+		2098: subscript m
+		2099: subscript n
+		209A: subscript p
+		209B: subscript s
+		209C: subscript t
+		23E8: subscript 10
+	2610-2612: checkboxes
+		2610: blank checkbox
+		2611: ticked checkbox
+		2612: crossed checkbox
+	2100-214F: special characters
+		2102: Blackboard Bold C
+		2107: universal set
+		210D: Blackboard Bold H
+		210E: Planck constant
+		210F: reduced Planck constant
+		2113: litre sign
+		2115: Blackboard Bold N
+		2119: Blackboard Bold P
+		211A: Blackboard Bold Q
+		211D: Blackboard Bold R
+		2124: Blackboard Bold Z
+		2126: ohm
+		212A: Kelvin
+		212F: Script e
+		2135: aleph
+	2190-21FF: arrow representation of logical relations
+		2190: left arrow
+		2191: up arrow
+		2192: right arrow
+		2193: down arrow
+		219A: not left arrow
+		219B: not right arrow
+		21A4: left ray
+		21A6: right ray
+		21CB: left reversible reaction
+		21CC: right reversible reaction
+		21D0: left imply
+		21D2: right imply
+		21D4: horizontal equivalence
+	2200-22FF: mathematical symbols
+		2200: for all
+		2201: complement
+		2202: partial differential
+		2203: there exists
+		2204: there does not exist
+		2205: empty set
+		2206: finite difference
+		2207: nabla
+		2208: element of
+		2209: not element of
+		220B: contains
+		220C: not contains
+		220F: n-ary product
+		2210: n-ary coproduct
+		2211: n-ary summation
+		2212: minus *
+		2213: minus plus
+		2215: divide forward slash *
+		2216: set minus
+		2217: multiplication asterisk *
+		2218: composite function
+		2219: cdot
+		221A: square root
+		221D: proportional
+		221E: infinity
+		221F: right angle
+		2220: angle
+		2221: measured angle
+		2222: spherical angle
+		2223: divides *
+		2224: does not divide
+		2225: parallel
+		2226: not parallel
+		2227: logical and
+		2228: logical or
+		2229: intersection
+		222A: union
+		222B: integral
+		222C: double integral
+		222D: triple integral
+		222E: contour integral
+		222F: surface integral
+		2230: volume integral
+		2234: therefore
+		2235: because
+		2236: ratio *
+		223C:similar triangle to
+		2241: not similar triangle to
+		2243: asymptote equal to
+		2244: not asymptote equal to
+		2245: Chinese congruent triangle
+		2247: Chinese not congruent triangle
+		2448: approx equal
+		2249: not approx equal
+		225C: triangle over equal
+		225D: def over equal
+		2260: not equal
+		2261: congruent
+		2262: not congruent
+		2264: less than or equal
+		2265: more than or equal
+		226A: much less than
+		226B: much more than
+		226E: not less than
+		226F: not more than
+		2270: not less than or equal
+		2271: not more than or equal
+		227A: minorise
+		227B: majorise
+		227C: minorise or equal
+		227D: majorise or equal
+		2280: not minorise
+		2281: not majorise
+		2282: subset
+		2283: superset
+		2284: not subset
+		2285: not superset
+		2286: subset or equal
+		2287: superset or equal
+		2288: not subset or equal
+		2289: not superset or equal
+		22A4: down tack
+		22A5: up tack
+		22BB: xor
+		22BC: nand
+		22BD: nor
+		22BF: right angle triangle
+		22C0: n-ary logic and
+		22C1: n-ary logic or
+		22C2: n-ary intersection
+		22C3: n-ary union
+		22C5: cdot *
+		22D8: very much less than
+		22D9: very much more than
+		22E0: not minorise or equal
+		22E1: not majorise or equal
+		22EE: vertical ellipsis
+		22EF: cdot ellipsis
+		22F0: forward slash ellipsis
+		22F1: back slash ellipsis
+	2300-23FF: other technical symbols
+		2301: electric arrow
+		2303: up v arrow
+		2304: down v arrow
+		2308: opening ceiling
+		2309: closing ceiling
+		230A: opening floor
+		230B: closing floor
+		231C: top left corner
+		231D: top right corner
+		231E: bottom left corner
+		231F: buttom right corner
+		2320: integral top part
+		23AE: integral middle part
+		2321: integral bottom part
+		232C: benzene ring
+		23E3: benzene ring with circle
+		239B: opening bracket top part
+		239C: opening bracket middle part
+		239D: opening bracket bottom part
+		239E: closing bracket top part
+		239F: closing bracket middle part
+		23A0: closing bracket bottom part
+		23A1: opening square bracket top part
+		23A2: opening square bracket middle part
+		23A3: opening square bracket bottom part
+		23A4: closing square bracket top part
+		23A5: closing square bracket middle part
+		23A6: closing square bracket bottom part
+		23A7: opening brace top part
+		23A8: opening brace middle part
+		23A9: opening brace bottom part
+		23AA: brace extension
+		23AB: closing brace top part
+		23AC: closing brace middle part
+		23AD: closing brace bottom part
+		23AF: horizontal extension
+		23D0: vertical extension
+		23B0: forward slash brace component
+		23B1: back slash brace component
+		23B2: summation top
+		23B3: summation bottom
+		2322: alternative vertical opening bracket *
+		2323: alternative vertical closing bracket *
+		23B4: vertical opening square bracket
+		23B5: vertical closing square bracket
+		23B7: square root *
+		23B8: left aligned vertical line
+		23B9: right aligned vertical line
+		238D: monostable
+		238E: hysteresis
+		238F: open circuit output H-type
+		2390: open circuit output L-type
+		2391: passive pull down output
+		2392: passive pull up output
+		2393: direct current alternate symbol
+		2394: software function
+		23DA: ground
+		23DB: fuse
+		23E4: straightness
+		23E5: flatness
+		23E6: alternating current
+		23E7: electrical intersection
+		23DC: vertical opening bracket
+		23DD: vertical closing bracket
+		23DE: vertical opening brace
+		23DF: vertical closing brace
+		23E0: vertical opening semisquare bracket
+		23E1: vertical closing semisquare bracket
+	25A0-25FF: pseudo-geometric shapes
+		25A0: filled square
+		25A1: outline square
+		25B2: filled triangle
+		25B3: outline triangle
+	0391-03A9: Greek capital letters used in Mathematics
+	03B1-03C9: Greek small letters used in Mathematics
+	E002: version number
+
+SingScript 2:
+     2460-2473: OAS numbers 1 - 20
+	24B6-24EA: OAS letters and number 0
+	2500-257F (constant edge width): table mockups
+	     2500: left right
+		2502: up down
+		250C: right down
+		2510: left down
+		2514: up right
+		2518: up left
+		251C: all except left
+		2524: all except right
+		252C: all except up
+		2534: all except down
+		253C: all
+		2571: forward slash diagonal
+		2572: backward slash diagonal
+		2573: double diagonal
+	E003: version number
+
+SingScript 3:
+     1D00-1DBF: non Unicode compliant full range of exponents and subscripts
+          1D2C: exponent A
+		1D2E: exponent B
+		1D2F: exponent C
+		1D30: exponent D
+		1D31: exponent E
+		1D32: exponent F
+		1D33: exponent G
+		1D34: exponent H
+		1D35: exponent I
+		1D36: exponent J
+		1D37: exponent K
+		1D38: exponent L
+		1D39: exponent M
+		1D3A: exponent N
+		1D3C: exponent O
+		1D3E: exponent P
+		1D2D: exponent Q
+		1D3F: exponent R
+		1D3B: exponent S
+		1D40: exponent T
+		1D41: exponent U
+		1D3D: exponent V
+		1D42: exponent W
+		1D44: exponent X
+		1D45: exponent Y
+		1D46: exponent Z
+		1D00: subscript A
+		1D03: subscript B
+		1D04: subscript C
+		1D05: subscript D
+		1D07: subscript E
+		1D01: subscript F
+		1D02: subscript G
+		1D06: subscript H
+		1D08: subscript I
+		1D0A: subscript J
+		1D0B: subscript K
+		1D0C: subscript L
+		1D0D: subscript M
+		1D0E: subscript N
+		1D0F: subscript O
+		1D18: subscript P
+		1D09: subscript Q
+		1D10: subscript R
+		1D11: subscript S
+		1D12: subscript T
+		1D13: subscript U
+		1D14: subscript V
+		1D15: subscript W
+		1D16: subscript X
+		1D17: subscript Y
+		1D19: subscript Z
+		1D43: exponent a
+		1D47: exponent b
+		1D4A: exponent c
+		1D48: exponent d
+		1D49: exponent e
+		1D4B: exponent f
+		1D4D: exponent g
+		1D4C: exponent h
+		1D4E: exponent i *
+		1D53: exponent j
+		1D4F: exponent k
+		1D54: exponent l
+		1D50: exponent m
+		1D51: exponent n *
+		1D52: exponent o
+		1D56: exponent p
+		1D55: exponent q
+		1D59: exponent r
+		1D5A: exponent s
+		1D57: exponent t
+		1D58: exponent u
+		1D5B: exponent v
+		1D5C: exponent w
+		1D5D: exponent x
+		1D5E: exponent y
+		1D5F: exponent z
+		1D66: subscript a *
+		1D67: subscript b
+		1D68: subscript c
+		1D69: subscript d
+		1D6A: subscript e *
+		1D6B: subscript f
+		1D6C: subscript g
+		1D6D: subscript h *
+		1D62: subscript i
+		1D6E: subscript j
+		1D6F: subscript k *
+		1D70: subscript l *
+		1D71: subscript m *
+		1D72: subscript n *
+		1D73: subscript o *
+		1D74: subscript p *
+		1D75: subscript q
+		1D63: subscript r
+		1D76: subscript s *
+		1D77: subscript t *
+		1D64: subscript u
+		1D65: subscript v
+		1D78: subscript w
+		1D79: subscript x *
+		1D80: subscript y
+		1D81: subscript z
+	E004: version number
+	
+SingScript 4:
+     2100-214F: special characters
+          2103: degrees Celsius
+		2108: old perpendicular sign
+		210A: Script g
+		210B: Script H
+		210C: Blackletter H
+		2110: Script I
+		2111: Blackletter I
+		2112: Script L
+		2118: Script p
+		211B: Script R
+		211C: Blackletter R
+		2127: inverted ohm
+		2128: Blackletter Z
+		2129: inverted iota
+		212C: Script B
+		212D: Blackletter C
+		2130: Script E
+		2131: Script F
+		2133: Script M
+		2134: Script O
+		2136: bet
+		2137: gimel
+		2138: dalet
+		213C: Blackboard Bold pi
+		213D: Blackboard Bold gamma
+		213E: Backboard Bold capital gamma
+		213F: Blackboard Bold capital pi
+		2140: Blackboard Bold summation
+		2145: Blackboard Bold D
+		2146: Blackboard Bold d
+		2147: Blackboard Bold e
+		2148: Blackboard Bold i
+		2149: Blackboard Bold j
+	2190-21FF: arrow representation of logical relations
+		2194: horizontal span
+		2195: vertical span
+		2196: up left arrow
+		2197: up right arrow
+		2198: down right arrow
+		2199: down left arrow
+		21A5: up ray
+		21A7: down ray
+		21BA: counterclockwise rotation
+		21BB: clockwise rotation
+		21D1: up imply
+		21D3: down imply
+		21D5: vertical equivalence
+	2200-22FF: Mathematical symbols
+		220A: small element of *
+		220D: small contains *
+		220E: rectangle QED *
+		2214: dot plus
+		221B: cube root *
+		221C: 4th root *
+		2231: clockwise integral
+		2232: clockwise contour integral
+		2233: counterclockwise contour integral
+		2237: proportion
+		2238: dot minus
+		2239: dot excess
+		223A: geometric proportion
+		223B: homothetic
+		223D: lazy S
+		223E: inverted lazy S
+		223F: sine wave
+		2240: wreath product
+		2242: minus tilde
+		2246: tilde over not equal
+		224A: approx equal over minus
+		224B: triple tilde
+		224C: inverted tilde over equal
+		224D: converging semicircles
+		224E: diverging wire overlaps
+		224F: wire overlap over minus
+		2250: dot over equal
+		2251: equal in colon
+		2252: equal in back slash colon
+		2253: equal in forward slash colon
+		2254: colon equal
+		2255: equal colon
+		2256: function composite in equal
+		2257: function composite over equal
+		2258: semicircle over equal
+		2259: logic and over equal
+		225A: logic or over equal
+		225B: star over equal
+		225E: m over equal
+		225F: question mark over equal
+		2263: equal over equal
+		2266: less than over equal
+		2267: more than over equal
+		2268: less than over not equal
+		2269: more than over not equal
+		226C: side converging semcircles
+		226D: not converging semicircles
+		2272: less than over similar
+		2273: more than over similar
+		2274: not less than over similar
+		2275: not more than over similar
+		2276: less than over more than
+		2277: more than over less than
+		2278: not less than over more than
+		2279: not more than over less than
+		227E: minorise over similar
+		227F: majorise over similar
+		228A: subset over not line
+		228B: superset over not line
+		228C: multiset
+		228D: multiset multiplication
+		228E: multiset union
+		228F: square image
+		2290: square original
+		2291: square image or equal
+		2292: square original or equal
+		2293: square intersection
+		2294: square union
+		2295: circled plus
+		2296: circled minus
+		2297: circled multiplication cross
+		2298: circled divide slash
+		2299: circled cdot
+		229A: circled composite function
+		229B: circled multiplication asterisk
+		229C: circled equal
+		229D: circled hyphen
+		229E: squared plus
+		229F: squared minus
+		22A0: squared multiplication cross
+		22A1: squared cdot
+		22A2: right tack
+		22A3: left tack
+		22A6: lined hyphen
+		22A7: lined double hyphen
+		22A8: lined equal
+		22A9: double lined line
+		22AA: triple lined line
+		22AB: double lined equal
+		22AC: not lined line
+		22AD: not lined equal
+		22AE: not double lined line
+		22AF: not double lined equal
+		22B0: curly minorise
+		22B1: curly majorise
+		22B2: left triangle
+		22B3: right triangle
+		22B4: left triangle or equal
+		22B5: right triangle or equal
+		22B6: white circle link black circle
+		22B7: black circle link white circle
+		22B8: nothing link white circle
+		22B9: converging hyphens
+		22BA: intercalate
+		22BE: right angle with arc
+		22C4: diamond
+		22C6: star
+		22C7: division times
+		22C8: bow tie
+		22C9: left normal semidirect product
+		22CA: right normal semidirect product
+		22CB: left semidirect product
+		22CC: right semidirect product
+		22CD: inverted tilde over line
+		22CE: curly logic or
+		22CF: curly logic and
+		22D0: double subset
+		22D1: double superset
+		22D2: double intersection
+		22D3: double union
+		22D4: proper intersection
+		22D5: equal and parallel
+		22D6: less than dot
+		22D7: more than dot
+		22DA: less than over line over more than
+		22DB: more than over line over less than
+		22DC: line over less than
+		22DD: line over more than
+		22DE: equal or minorise
+		22DF: equal or majorise
+		22E2: not square image or equal
+		22E3: not square original or equal
+		22E4: square image over not line
+		22E5: square original over not line
+		22E6: less than over not tilde
+		22E7: more than over not tilde
+		22E8: minorise over not tilde
+		22E9: majorise over not tilde
+		22EA: not left triangle
+		22EB not right triangle
+		22EC: not left triangle or equal
+		22ED: not right triangle or equal
+		22F2: element of with long middle line *
+		22F3: element of with vertical hyphen *
+		22F4: small element of with vertical hyphen *
+		22F5: dot over element of
+		22F6: line over element of
+		22F7: small line over element of *
+		22F8: element of over line
+		22F9: element of with double middle lines
+		22FA: contains with long middle line *
+		22FB: contains with vertical hyphen *
+		22FC: small contains with vertical hyphen *
+		22FD: line over contains
+		22FE: small line over contains *
+		22FF: square element of
+	2300-23FF: other technical symbols
+		2300: diameter
+		2302: home page
+		2305: projective
+		2306: perspective
+		2307: wavy line
+		2310: reversed not sign
+		2311: pillow lozenge
+		2312: arc
+		2313: semicircle
+		2314: circle sector
+		2315: search
+		2316: aim target
+		2317: viewdata
+		2318: old command
+		2319: inverted not sign
+		2324: old enter
+		2325: old option
+		2326: old delete
+		2327: old text remove
+		232B: backspace
+		232D: cylindricity
+		232E: all around profile
+		232F: symmetry
+		2330: total runout
+		2331: dimension origin
+		2332: conical taper
+		2333: slope
+		2334: counterbore
+		2335: countersink
+		237C: 3D axes with electrical arrow
+		237D: shouldered open box
+		237E: bell symbol
+		237F: end of medium
+		23B6: vertical reverse paired square brackets
+		23CE: return
+		23CF: eject
+		23E9: fast forward right
+		23EA: fast forward left
+		23EB: fast forward up
+		23EC: fast forward down
+		23ED: skip to end right
+		23EE: skip to end left
+		23EF: play pause toggle
+		23F4: black left arrow
+		23F5: black right arrow
+		23F6: black up arrow
+		23F7: black down arrow
+		23F8: pause
+		23F9: stop
+		23FA: record
+		23FB: power
+		23FC: power off
+		23FD: power on
+		23FE: sleep
+		23FF: observer eye
+	E005: version number
+
+SingScript 5:
+     27C0-27EF: Mathematical symbols - extension 1
+	27F5-27FE: arrows - extension 2
+	2900-297F: arrows - extension 3
+	2980-29FF: Mathematical symbols - extension 2
+	2A00-2AFF: Mathematical symbols - extension 3
+	E006: version number
+
+SingScript 6:
+     1D400-1D7FF: all Mathematical letters, numbers, and their variations
+     1F780-1F7FF: shapes extension
+     1F800-1F8FF: arrows extension
+	E007: version number

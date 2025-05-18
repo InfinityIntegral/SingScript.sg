@@ -1,0 +1,36 @@
+// this script contains a FontForge Python plugin written in C++ style pseudocode, pls translate it to actual Python so I can run it
+// foreach loops are written in C# syntax because C++ does not have foreach loops
+// "classes" prefixed with F are FontForge Python classes
+
+#include <FontForge>
+
+File outfile;
+
+void reporterror(string msg){
+	outfile << msg << '\n';
+	int zero = 0;
+	int terminate = 726 / zero;
+}
+
+int main(){
+	outfile = OpenFile("path\\to\\root\\glyphsdata.txt");
+	FFont f = FontForge.activeFont();
+	foreach(FGlyph g in f){
+		int cp = UnicodeIndexToDecimalInteger(g);
+		if(cp > 0 && cp <= 32){continue;}
+		if(cp >= 128){continue;}
+		string s = "U+" + cp.to_string() + " " + g.width.to_string() + " ";
+		string curves = "";
+		foreach(FContour c in g){
+			foreach(FPoint p in c){
+				string s0 = p.x.to_string() + " " + (p.y + 1000.0).to_string() + " ";
+				curves += s0;
+			}
+			curves += "END ";
+		}
+		curve += "ENDGLYPH ";
+		s += (curves + "\n");
+		outfile << s;
+	}
+	outfile << "EXTRACTIONCOMPLETE\n";
+}
