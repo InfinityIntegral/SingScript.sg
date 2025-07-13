@@ -1,8 +1,8 @@
 import fontforge
 
 # Open input file and error log
-infile = open("path\\to\\root\\kerningdata.txt", "r")
-errlog = open("path\\to\\root\\errorlog.txt", "w")
+infile = open("kerningdata.txt", "r")
+errlog = open("errorlog.txt", "w")
 
 # Get active font
 f = fontforge.activeFont()

@@ -96,9 +96,9 @@ void getintercept(float y, B3curve& c, float& l, float& r){
 }
 
 int main(){
-	std::ifstream infile("path\\to\\root\\glyphsdata.txt");
-	std::ofstream outfile("path\\to\\root\\kerningdata.txt");
-	std::ofstream errlog("path\\to\\root\\errorlog.txt");
+	std::ifstream infile("glyphsdata.txt");
+	std::ofstream outfile("kerningdata.txt");
+	std::ofstream errlog("errorlog.txt");
 	Font f;
 	std::string s;
 	while(infile >> s){

@@ -7,7 +7,7 @@ def report_error(msg, outfile):
 
 def main():
     # Open the output file for writing
-    with open("path\\to\\root\\glyphsdata.txt", "w") as outfile:
+    with open("glyphsdata.txt", "w") as outfile:
         font = fontforge.activeFont()
 
         if font is None:
