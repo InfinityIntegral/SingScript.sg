@@ -30,9 +30,7 @@ All characters in the font are handwritten and copied online by me using the tem
 - [ ] miscellaneous Math A
 - [ ] arrows A
 - [ ] arrows B
-- [ ] miscellaneous Math B
-- [ ] supplementary Math
-- [ ] selected miscellaneous symbols A
+- [ ] selected miscellaneous symbols and arrows
 
 ## Credits
 - Git (https://git-scm.com/)

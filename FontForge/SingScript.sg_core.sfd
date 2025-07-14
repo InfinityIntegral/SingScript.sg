@@ -1,0 +1,104 @@
+SplineFontDB: 3.2
+FontName: SingScript.sg_template
+FullName: SingScript.sg template
+FamilyName: SingScript.sg
+Weight: Regular
+Copyright: Copyright (c) 2025, 05524F.sg (Singapore)
+UComments: "2025-7-14: Created with FontForge (http://fontforge.org)"
+Version: v1
+ItalicAngle: 0
+UnderlinePosition: -90
+UnderlineWidth: 45
+Ascent: 600
+Descent: 300
+InvalidEm: 0
+LayerCount: 2
+Layer: 0 0 "Back" 1
+Layer: 1 0 "Fore" 0
+XUID: [1021 768 647112374 17012]
+FSType: 0
+OS2Version: 0
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 1
+CreationTime: 1752436236
+ModificationTime: 1752437097
+PfmFamily: 17
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 73
+VLineGap: 0
+OS2TypoAscent: 0
+OS2TypoAOffset: 1
+OS2TypoDescent: 0
+OS2TypoDOffset: 1
+OS2TypoLinegap: 73
+OS2WinAscent: 0
+OS2WinAOffset: 1
+OS2WinDescent: 0
+OS2WinDOffset: 1
+HheadAscent: 0
+HheadAOffset: 1
+HheadDescent: 0
+HheadDOffset: 1
+OS2Vendor: 'PfEd'
+MarkAttachClasses: 1
+DEI: 91125
+LangName: 1033
+Encoding: Custom
+UnicodeInterp: none
+NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 0
+WinInfo: 0 27 9
+OnlyBitmaps: 1
+BeginPrivate: 0
+EndPrivate
+Grid
+0 -208 m 24
+ 390 -208 610 -208 1000 -208 c 1048
+  Spiro
+    0 -208 {
+    1000 -208 o
+    0 0 z
+  EndSpiro
+0 275 m 24
+ 390 275 610 275 1000 275 c 1048
+  Spiro
+    0 275 {
+    1000 275 o
+    0 0 z
+  EndSpiro
+0 300 m 24
+ 390 300 610 300 1000 300 c 1048
+  Spiro
+    0 300 {
+    1000 300 o
+    0 0 z
+  EndSpiro
+0 442 m 24
+ 390 442 610 442 1000 442 c 1048
+  Spiro
+    0 442 {
+    1000 442 o
+    0 0 z
+  EndSpiro
+0 -233 m 24
+ 390 -233 610 -233 1000 -233 c 1048
+  Spiro
+    0 -233 {
+    1000 -233 o
+    0 0 z
+  EndSpiro
+0 467 m 24
+ 390 467 610 467 1000 467 c 1048
+  Spiro
+    0 467 {
+    1000 467 o
+    0 0 z
+  EndSpiro
+EndSplineSet
+TeXData: 1 0 0 346030 173015 115343 0 1048576 115343 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
+BeginChars: 1 0
+EndChars
+EndSplineFont
