@@ -11,10 +11,10 @@ The font does not support colour, so it does not have emojis. However, some emoj
 All characters in the font are handwritten and copied online by me using the template found in the writingtemplates folder.
 
 ## planned for SingScript v1
-- [ ] ASCII
-- [ ] Latin A
-- [ ] punctuation
+- [x] ASCII
+- [x] Latin supplementary
 - [ ] .sg emoji at code 0378
+- [ ] punctuation
 - [ ] Greek letters used in Sciences
 - [ ] subscripts and superscripts
 - [ ] full subscripts and superscripts using Unicode phonetics range (not Unicode compliant)
@@ -31,11 +31,14 @@ All characters in the font are handwritten and copied online by me using the tem
 - [ ] arrows A
 - [ ] arrows B
 - [ ] selected miscellaneous symbols and arrows
+- [ ] miscellaneous Math B
+- [ ] supplementary Math
 
 ## Credits
 - Git (https://git-scm.com/)
 - GitHub (https://github.com/)
 - LGPL License (https://opensource.org/license/lgpl-3-0)
+- FontForge (https://fontforge.org)
 
 ## Contributing
 The best way to contribute is to complain. To complain refers to informing me of a bug or suggesting a new feature to be included to the software. Pls refer to the "Contact me" section below.
