@@ -13,17 +13,19 @@ All characters in the font are handwritten and copied online by me using the tem
 ## planned for SingScript v1
 - [x] ASCII
 - [x] Latin supplementary
-- [ ] .sg emoji at code 0378
+- [x] .sg emoji at code 0378
+- [ ] spaces
 - [ ] punctuation
-- [ ] Greek letters used in Sciences
 - [ ] subscripts and superscripts
+- [ ] Greek letters used in Sciences
 - [ ] full subscripts and superscripts using Unicode phonetics range (not Unicode compliant)
 - [ ] selected letterlike symbols
 - [ ] arrows
 - [ ] Math symbols
 - [ ] miscellaneous technical symbols
 - [ ] enclosed alphanumerics (Optical Answer Sheet)
-- [ ] box drawing and blocks (fake tables)
+- [ ] box drawing (fake tables)
+- [ ] blocks (fake tables)
 - [ ] selected geometric shapes
 - [ ] selected miscellaneous symbols
 - [ ] selected dingbats
