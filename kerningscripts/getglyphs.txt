@@ -21,7 +21,10 @@ def main():
             curves = "U+" + str(cp) + " " + str(glyph.width) + " ";
             for contour in glyph.layers[1]:
                 for point in contour:
-                    curves += (str(point.x) + " " + str(point.y) + " ");
+                    oncurve = 1;
+                    if point.on_curve == False:
+                        oncurve = 0;
+                    curves += (str(point.x) + " " + str(point.y) + " " + str(oncurve) + " ");
                 curves += "END ";
             curves += "ENDGLYPH\n";
             log[cp - 33] = curves;
