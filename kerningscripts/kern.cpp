@@ -332,4 +332,15 @@ int main(){
         }
         std::cout << "generated kerning data\n";
     }
+    
+    {
+        std::ofstream outFile("kerningdata.txt");
+        for(int i=0; i<Font::glyphCount; i++){
+            Glyph& leftGlyph = (*(*myFont).glyphs).at(i);
+            for(int j=0; j<Font::glyphCount; j++){
+                Glyph& rightGlyph = (*(*myFont).glyphs).at(j);
+                outFile << leftGlyph.unicode << " " << rightGlyph.unicode << " " << (*outputData).at(i * Font::glyphCount + j) << "\n";
+            }
+        }
+    }
 }

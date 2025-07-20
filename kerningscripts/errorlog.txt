@@ -1,0 +1,2 @@
+94 kerning classes each with 1 char
+8836 kerning data points

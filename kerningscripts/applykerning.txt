@@ -1,0 +1,39 @@
+import fontforge
+
+infile = open("../kerningscripts/kerningdata.txt", "r")
+errlog = open("../kerningscripts/errorlog.txt", "w")
+
+f = fontforge.activeFont()
+
+db = []
+cs = []
+
+while True:
+    line = infile.readline()
+    if not line:
+        break
+    c1, c2, v = map(int, line.split())
+
+    db.append(int(v))
+
+    if c1 == 65:
+        found = False
+        for i in range(33, 127):
+            glyph = f[i]
+            if glyph.unicode == c2:
+                cs.append(glyph.glyphname)
+                found = True
+                break
+        if not found:
+            errlog.write(f"Cannot find char {c2}\n")
+
+f.addLookup("kern", "gpos_pair", (), ())
+vchars = [(cs[i],) for i in range(len(cs))]
+errlog.write(f"{len(vchars)} kerning classes each with 1 char\n")
+tchars = tuple(vchars)
+tvals = tuple(db)
+errlog.write(f"{len(tvals)} kerning data points\n")
+f.addKerningClass("kern", "kernsubtable", tchars, tchars, tvals)
+
+infile.close()
+errlog.close()
