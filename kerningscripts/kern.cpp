@@ -5,6 +5,8 @@
 #include <iostream>
 #include <queue>
 #include <cmath>
+#include <algorithm>
+#include <limits>
 
 struct Point{
     double x;
@@ -52,7 +54,7 @@ struct Line{
 };
 
 struct Glyph{
-    static constexpr int verticalSampleSize = 90;
+    static constexpr int verticalSampleSize = 1000;
     int unicode;
     double width;
     std::array<double, Glyph::verticalSampleSize>* leftBound;
@@ -82,6 +84,9 @@ struct Font{
     static constexpr int maximumUnicode = 126;
     static constexpr int glyphCount = Font::maximumUnicode - Font::minimumUnicode + 1;
     static constexpr double flatnessBound = 0.1;
+    static constexpr double descentSize = 300.0f;
+    static constexpr double ascentSize = 600.0f;
+    static constexpr double emSize = Font::ascentSize + Font::descentSize;
     std::array<Glyph, Font::glyphCount>* glyphs;
     Font(){
         glyphs = new std::array<Glyph, Font::glyphCount>();
@@ -103,6 +108,14 @@ double distanceSquaredToLine(Point p1, Point p2, Point x){
 bool curveIsFlat(BezierCurve c){
     if(distanceSquaredToLine(c.point1, c.point4, c.point2) < Font::flatnessBound * Font::flatnessBound && distanceSquaredToLine(c.point1, c.point4, c.point3) < Font::flatnessBound * Font::flatnessBound){return true;}
     return false;
+}
+
+double normaliseY(double y){
+    return ((y + Font::descentSize) / Font::emSize * static_cast<double>(Glyph::verticalSampleSize));
+}
+
+double unnormaliseY(double y){
+    return (y / static_cast<double>(Glyph::verticalSampleSize) * Font::emSize - Font::descentSize);
 }
 
 int main(){
@@ -222,7 +235,6 @@ int main(){
             for(int i=0; i<(*currentGlyph.curves).size(); i++){
                 (*unrasterisedCurves).push((*currentGlyph.curves).at(i));
             }
-            delete currentGlyph.curves;
             currentGlyph.curves = nullptr;
             while((*unrasterisedCurves).size() > 0){
                 BezierCurve oldCurve = (*unrasterisedCurves).front();
@@ -242,5 +254,31 @@ int main(){
             }
         }
         std::cout << "rasterised glyphs\n";
+    }
+    
+    {
+        for(int i=0; i<Font::glyphCount; i++){
+            Glyph& currentGlyph = (*(*myFont).glyphs).at(i);
+            for(int j=0; j<Glyph::verticalSampleSize; j++){
+                (*currentGlyph.leftBound).at(j) = currentGlyph.width;
+                (*currentGlyph.rightBound).at(j) = currentGlyph.width;
+            }
+            for(int j=0; j<(*currentGlyph.rasterisedCurves).size(); j++){
+                Line& currentLine = (*currentGlyph.rasterisedCurves).at(j);
+                int boundBelow = static_cast<int>(std::floor(normaliseY(std::min(currentLine.point1.y, currentLine.point2.y))));
+                int boundAbove = static_cast<int>(std::ceil(normaliseY(std::max(currentLine.point1.y, currentLine.point2.y))));
+                if(boundBelow < 0){boundBelow = 0;}
+                if(boundAbove > Glyph::verticalSampleSize - 1){boundAbove = Glyph::verticalSampleSize - 1;}
+                for(int k=boundBelow; k<=boundAbove; k++){
+                    double t = (unnormaliseY(static_cast<double>(k)) - currentLine.point1.y) / (currentLine.point2.y - currentLine.point1.y);
+                    double x = currentLine.point1.x + t * (currentLine.point2.x - currentLine.point1.x);
+                    if(x < std::min(currentLine.point1.x, currentLine.point2.x)){x = std::min(currentLine.point1.x, currentLine.point2.x);}
+                    else if(x > std::max(currentLine.point1.x, currentLine.point2.x)){x = std::max(currentLine.point1.x, currentLine.point2.x);}
+                    if(x < (*currentGlyph.leftBound).at(k)){(*currentGlyph.leftBound).at(k) = x;}
+                    if(currentGlyph.width - x < (*currentGlyph.rightBound).at(k)){(*currentGlyph.rightBound).at(k) = currentGlyph.width - x;}
+                }
+            }
+        }
+        std::cout << "computed bounds\n";
     }
 }
