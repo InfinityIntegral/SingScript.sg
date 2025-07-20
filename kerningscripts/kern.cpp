@@ -54,13 +54,15 @@ struct Line{
 };
 
 struct Glyph{
-    static constexpr int verticalSampleSize = 1000;
+    static constexpr int verticalSampleSize = 100;
     int unicode;
     double width;
     std::array<double, Glyph::verticalSampleSize>* leftBound;
     std::array<double, Glyph::verticalSampleSize>* rightBound;
     std::vector<BezierCurve>* curves;
     std::vector<Line>* rasterisedCurves;
+    std::array<double, Glyph::verticalSampleSize>* averagedLeftBound;
+    std::array<double, Glyph::verticalSampleSize>* averagedRightBound;
     Glyph(){
         unicode = -1;
         width = 0;
@@ -68,6 +70,8 @@ struct Glyph{
         rightBound = new std::array<double, Glyph::verticalSampleSize>();
         curves = new std::vector<BezierCurve>();
         rasterisedCurves = new std::vector<Line>();
+        averagedLeftBound = new std::array<double, Glyph::verticalSampleSize>();
+        averagedRightBound = new std::array<double, Glyph::verticalSampleSize>();
     }
     Glyph(int c, double w){
         unicode = c;
@@ -76,6 +80,8 @@ struct Glyph{
         rightBound = new std::array<double, Glyph::verticalSampleSize>();
         curves = new std::vector<BezierCurve>();
         rasterisedCurves = new std::vector<Line>();
+        averagedLeftBound = new std::array<double, Glyph::verticalSampleSize>();
+        averagedRightBound = new std::array<double, Glyph::verticalSampleSize>();
     }
 };
 
@@ -87,6 +93,7 @@ struct Font{
     static constexpr double descentSize = 300.0f;
     static constexpr double ascentSize = 600.0f;
     static constexpr double emSize = Font::ascentSize + Font::descentSize;
+    static constexpr double targetSeparation = 50.0f;
     std::array<Glyph, Font::glyphCount>* glyphs;
     Font(){
         glyphs = new std::array<Glyph, Font::glyphCount>();
@@ -252,6 +259,7 @@ int main(){
                 if(curveIsFlat(newCurve2) == true){(*currentGlyph.rasterisedCurves).push_back(Line(newCurve2.point1, newCurve2.point4));}
                 else{(*unrasterisedCurves).push(newCurve2);}
             }
+            delete unrasterisedCurves;
         }
         std::cout << "rasterised glyphs\n";
     }
@@ -280,5 +288,48 @@ int main(){
             }
         }
         std::cout << "computed bounds\n";
+    }
+    
+    {
+        int verticalAverageSize = static_cast<int>(std::ceil(static_cast<double>(Glyph::verticalSampleSize) * Font::targetSeparation / Font::emSize));
+        for(int i=0; i<(*myFont).glyphCount; i++){
+            Glyph& currentGlyph = (*(*myFont).glyphs).at(i);
+            for(int j=0; j<Glyph::verticalSampleSize; j++){
+                int boundBelow = j - verticalAverageSize;
+                int boundAbove = j + verticalAverageSize;
+                if(boundBelow < 0){boundBelow = 0;}
+                if(boundAbove > Glyph::verticalSampleSize - 1){boundAbove = Glyph::verticalSampleSize - 1;}
+                double l = currentGlyph.width;
+                double r = currentGlyph.width;
+                for(int k=boundBelow; k<=boundAbove; k++){
+                    if((*currentGlyph.leftBound).at(k) < l){l = (*currentGlyph.leftBound).at(k);}
+                    if((*currentGlyph.rightBound).at(k) < r){r = (*currentGlyph.rightBound).at(k);}
+                }
+                (*currentGlyph.averagedLeftBound).at(j) = l;
+                (*currentGlyph.averagedRightBound).at(j) = r;
+            }
+        }
+        std::cout << "computed average bounds\n";
+    }
+    
+    std::array<int, Font::glyphCount * Font::glyphCount>* outputData = new std::array<int, Font::glyphCount * Font::glyphCount>();
+    {
+        for(int i=0; i<Font::glyphCount; i++){
+            Glyph& leftGlyph = (*(*myFont).glyphs).at(i);
+            for(int j=0; j<Font::glyphCount; j++){
+                Glyph& rightGlyph = (*(*myFont).glyphs).at(j);
+                bool kerningApplied = false;
+                int kerningResult = -100000;
+                for(int k=0; k<Glyph::verticalSampleSize; k++){
+                    if((*leftGlyph.rightBound).at(k) == leftGlyph.width || (*rightGlyph.averagedLeftBound).at(k) == rightGlyph.width){continue;}
+                    int suggestedKerning = static_cast<int>(std::round(Font::targetSeparation - (*leftGlyph.rightBound).at(k) - (*rightGlyph.averagedLeftBound).at(k)));
+                    kerningApplied = true;
+                    if(suggestedKerning > kerningResult){kerningResult = suggestedKerning;}
+                }
+                if(kerningApplied == false){(*outputData).at(i * Font::glyphCount + j) = 0;}
+                else{(*outputData).at(i * Font::glyphCount + j) = kerningResult;}
+            }
+        }
+        std::cout << "generated kerning data\n";
     }
 }
