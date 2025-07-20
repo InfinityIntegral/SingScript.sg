@@ -1,0 +1,26 @@
+This folder contains 3 relevant files
+1. getglyphs.txt
+2. kern.cpp
+3. applykerning.txt
+
+Before using these tools, first ensures that doing "cd ../kerningscripts" in cmd / terminal gets you to this folder when you start from the location of your FontForge project folder.
+
+Your font must have glyphs for Unicode code points 33 to 127 (displayable ASCII characters) created. Preferably, you should re encode your font in FontForge through Encoding > Reencode > ISO 8859-1 (Latin1), but that is not strictly necessary. Your font must use cubic Bezier Curves. Also make sure that your font does not contain open contours. For best results, use Metrics > Auto Width on all characters with all 3 inputs being the same number.
+
+You should customise the following constexpr variables in kern.cpp based on the needs of your font. To find where they are, use find-replace on "constexpr". Note that only the 5 below should be customised.
+Glyph::verticalSampleSize - precision of the kerning computation
+Font::flatnessBound - maximum error allowed in Bezier Curve (which FontForge uses) rasterisation, a step in the computation process
+Font::descentSize - descent height of your font
+Font::ascentSize - ascent height of your font
+Font::targetSeparation - the number you chose when using Auto Width tool
+
+Below are steps to using the automatic kerning tool:
+1. copy paste the contents of getglyphs.txt into the textbox provided by FontForge's File > Execute Script function, make sure that you are using Python mode
+2. run the script, you should not see any visual change
+3. compile kern.cpp to get a executable
+4. run the generated executable which should inform you when the programme completes, try a lower Glyph.verticalSampleSize or a higher Font::flatnessBound if it is taking too long
+5. copy paste the contents of applykerning.txt into the File > Execute Script dialog
+6. run the script, you should not see any visual change
+7. use FontForge's Metrics > Kern Pair Closeup tool to view the results NOT NETRICS WINDOW, that is NOT SUPPORTED
+
+Note that this uses the GPOS kerning table instead of the legacy "kern". This means that kerning applied may not be visible in some applications such as FontForge Metrics Window or Windows font viewing tool. However, it is fully supported by Qt, including QWidget, Qt Quick, and SGEXTN.

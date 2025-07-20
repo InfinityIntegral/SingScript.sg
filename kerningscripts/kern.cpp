@@ -339,8 +339,13 @@ int main(){
             Glyph& leftGlyph = (*(*myFont).glyphs).at(i);
             for(int j=0; j<Font::glyphCount; j++){
                 Glyph& rightGlyph = (*(*myFont).glyphs).at(j);
-                outFile << leftGlyph.unicode << " " << rightGlyph.unicode << " " << (*outputData).at(i * Font::glyphCount + j) << "\n";
+                if(std::abs((*outputData).at(i * Font::glyphCount + j)) >= 5){
+                    outFile << leftGlyph.unicode << " " << rightGlyph.unicode << " " << (*outputData).at(i * Font::glyphCount + j) << "\n";
+                }
             }
         }
+        std::cout << "outputted kerning data\n";
     }
+    
+    std::cout << "programme completed successfully";
 }

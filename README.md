@@ -10,6 +10,8 @@ The font does not support colour, so it does not have emojis. However, some emoj
 
 All characters in the font are handwritten and copied online by me using the template found in the writingtemplates folder.
 
+The kerningscripts folder contains scripts to automatically apply kerning to a font. There is also a usageinstructions.txt document in that folder which explains how to use the scripts.
+
 ## planned for SingScript v1
 - [x] ASCII
 - [x] Latin supplementary

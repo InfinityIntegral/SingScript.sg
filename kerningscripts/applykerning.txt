@@ -1,39 +1,23 @@
-import fontforge
+import fontforge;
 
-infile = open("../kerningscripts/kerningdata.txt", "r")
-errlog = open("../kerningscripts/errorlog.txt", "w")
+a = [];
+b = [];
+v = [];
+n = 0;
 
-f = fontforge.activeFont()
+with open("../kerningscripts/kerningdata.txt", "r") as f:
+    for line in f:
+        parts = line.strip().split();
+        x, y, z = map(int, parts[:3]);
+        a.append(x);
+        b.append(y);
+        v.append(z);
+        n += 1;
 
-db = []
-cs = []
+font = fontforge.activeFont();
+font.addLookup("kernGPOS", "gpos_pair", (), (("kern", (("DFLT", ("dflt",)),)),))
+font.addLookupSubtable("kernGPOS", "kernGPOS-1")
 
-while True:
-    line = infile.readline()
-    if not line:
-        break
-    c1, c2, v = map(int, line.split())
-
-    db.append(int(v))
-
-    if c1 == 65:
-        found = False
-        for i in range(33, 127):
-            glyph = f[i]
-            if glyph.unicode == c2:
-                cs.append(glyph.glyphname)
-                found = True
-                break
-        if not found:
-            errlog.write(f"Cannot find char {c2}\n")
-
-f.addLookup("kern", "gpos_pair", (), ())
-vchars = [(cs[i],) for i in range(len(cs))]
-errlog.write(f"{len(vchars)} kerning classes each with 1 char\n")
-tchars = tuple(vchars)
-tvals = tuple(db)
-errlog.write(f"{len(tvals)} kerning data points\n")
-f.addKerningClass("kern", "kernsubtable", tchars, tchars, tvals)
-
-infile.close()
-errlog.close()
+for i in range(len(v)):
+    if chr(a[i]) in font:
+        font[chr(a[i])].addPosSub("kernGPOS-1", chr(b[i]), v[i]);
