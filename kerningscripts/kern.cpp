@@ -3,6 +3,8 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <queue>
+#include <cmath>
 
 struct Point{
     double x;
@@ -11,7 +13,7 @@ struct Point{
         x = 0.0;
         y = 0.0;
     }
-    Point(int x, int y){
+    Point(double x, double y){
         (*this).x = x;
         (*this).y = y;
     }
@@ -36,6 +38,19 @@ struct BezierCurve{
     }
 };
 
+struct Line{
+    Point point1;
+    Point point2;
+    Line(){
+        point1 = Point();
+        point2 = Point();
+    }
+    Line(Point p1, Point p2){
+        (*this).point1 = p1;
+        (*this).point2 = p2;
+    }
+};
+
 struct Glyph{
     static constexpr int verticalSampleSize = 90;
     int unicode;
@@ -43,19 +58,22 @@ struct Glyph{
     std::array<double, Glyph::verticalSampleSize>* leftBound;
     std::array<double, Glyph::verticalSampleSize>* rightBound;
     std::vector<BezierCurve>* curves;
+    std::vector<Line>* rasterisedCurves;
     Glyph(){
         unicode = -1;
         width = 0;
         leftBound = new std::array<double, Glyph::verticalSampleSize>();
         rightBound = new std::array<double, Glyph::verticalSampleSize>();
         curves = new std::vector<BezierCurve>();
+        rasterisedCurves = new std::vector<Line>();
     }
-    Glyph(int c, int w){
+    Glyph(int c, double w){
         unicode = c;
         width = w;
         leftBound = new std::array<double, Glyph::verticalSampleSize>();
         rightBound = new std::array<double, Glyph::verticalSampleSize>();
         curves = new std::vector<BezierCurve>();
+        rasterisedCurves = new std::vector<Line>();
     }
 };
 
@@ -63,11 +81,29 @@ struct Font{
     static constexpr int minimumUnicode = 33;
     static constexpr int maximumUnicode = 126;
     static constexpr int glyphCount = Font::maximumUnicode - Font::minimumUnicode + 1;
+    static constexpr double flatnessBound = 0.1;
     std::array<Glyph, Font::glyphCount>* glyphs;
     Font(){
         glyphs = new std::array<Glyph, Font::glyphCount>();
     }
 };
+
+double distanceSquaredToLine(Point p1, Point p2, Point x){
+    Point ap = Point(x.x - p1.x, x.y - p1.y);
+    Point ab = Point(p2.x - p1.x, p2.y - p1.y);
+    double distAB = ab.x * ab.x + ab.y * ab.y;
+    if(std::abs(distAB) < Font::flatnessBound){return 0.0;}
+    double t = (ap.x * ab.x + ap.y * ab.y) / distAB;
+    if(t < 0.0){t = 0.0;}
+    else if(t > 1.0){t = 1.0;}
+    Point nearestPoint = Point(p1.x + t * ab.x, p1.y + t * ab.y);
+    return (x.x - nearestPoint.x) * (x.x - nearestPoint.x) + (x.y - nearestPoint.y) * (x.y - nearestPoint.y);
+}
+
+bool curveIsFlat(BezierCurve c){
+    if(distanceSquaredToLine(c.point1, c.point4, c.point2) < Font::flatnessBound * Font::flatnessBound && distanceSquaredToLine(c.point1, c.point4, c.point3) < Font::flatnessBound * Font::flatnessBound){return true;}
+    return false;
+}
 
 int main(){
     Font* myFont = new Font();
@@ -88,7 +124,7 @@ int main(){
                 break;
             }
             else if(nextData == "ENDGLYPH"){
-                (*(*myFont).glyphs)[currentGlyph.unicode - Font::minimumUnicode] = currentGlyph;
+                (*(*myFont).glyphs).at(currentGlyph.unicode - Font::minimumUnicode) = currentGlyph;
                 currentGlyph = nullGlyph;
             }
             else if(nextData == "END"){
@@ -177,5 +213,34 @@ int main(){
             }
         }
         std::cout << "data loaded\n";
+    }
+    
+    {
+        for(int i=0; i<Font::glyphCount; i++){
+            Glyph& currentGlyph = (*(*myFont).glyphs).at(i);
+            std::queue<BezierCurve>* unrasterisedCurves = new std::queue<BezierCurve>();
+            for(int i=0; i<(*currentGlyph.curves).size(); i++){
+                (*unrasterisedCurves).push((*currentGlyph.curves).at(i));
+            }
+            delete currentGlyph.curves;
+            currentGlyph.curves = nullptr;
+            while((*unrasterisedCurves).size() > 0){
+                BezierCurve oldCurve = (*unrasterisedCurves).front();
+                (*unrasterisedCurves).pop();
+                Point a = Point((oldCurve.point1.x + oldCurve.point2.x) / 2.0, (oldCurve.point1.y + oldCurve.point2.y) / 2.0);
+                Point b = Point((oldCurve.point2.x + oldCurve.point3.x) / 2.0, (oldCurve.point2.y + oldCurve.point3.y) / 2.0);
+                Point c = Point((oldCurve.point3.x + oldCurve.point4.x) / 2.0, (oldCurve.point3.y + oldCurve.point4.y) / 2.0);
+                Point d = Point((a.x + b.x) / 2.0, (a.y + b.y) / 2.0);
+                Point e = Point((b.x + c.x) / 2.0, (b.y + c.y) / 2.0);
+                Point f = Point((d.x + e.x) / 2.0, (d.y + e.y) / 2.0);
+                BezierCurve newCurve1 = BezierCurve(oldCurve.point1, a, d, f);
+                BezierCurve newCurve2 = BezierCurve(f, e, c, oldCurve.point3);
+                if(curveIsFlat(newCurve1) == true){(*currentGlyph.rasterisedCurves).push_back(Line(newCurve1.point1, newCurve1.point4));}
+                else{(*unrasterisedCurves).push(newCurve1);}
+                if(curveIsFlat(newCurve2) == true){(*currentGlyph.rasterisedCurves).push_back(Line(newCurve2.point1, newCurve2.point4));}
+                else{(*unrasterisedCurves).push(newCurve2);}
+            }
+        }
+        std::cout << "rasterised glyphs\n";
     }
 }
