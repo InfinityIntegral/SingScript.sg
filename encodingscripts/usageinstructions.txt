@@ -1,0 +1,7 @@
+addglyphs.txt adds a certain Unicode range to your FontForge file with all glyphs bound to code points and named properly. Change the startCode and endCode variables in the script to the range you want (inclusive) before running it.
+
+properlynameglyphs.txt properly names all glyphs in your FontForge file assuming that no glyph has a Unicode code point of -1.
+
+removeemptyglyphs.txt sets the Unicode code point of all unused glyphs in your FontForge file to -1 so that they can be removed using Encoding > Remove Unused Slots, however note that this removes only unused slots behind the last used slot. This script has been tested to not delete spaces by accident.
+
+To run a script, copy paste it to the File > Execute Script dialog in FontForge and run it there.

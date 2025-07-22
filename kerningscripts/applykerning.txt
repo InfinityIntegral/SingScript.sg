@@ -21,9 +21,7 @@ font.addLookupSubtable("kernGPOS", "kernGPOS-1")
 for s in font:
     glyph = font[s];
     if glyph.unicode != -1:
-        correctName = fontforge.nameFromUnicode(glyph.unicode);
-        if correctName:
-            glyph.glyphname = correctName;
+        glyph.glyphname = fontforge.nameFromUnicode(glyph.unicode);
 
 for i in range(len(v)):
     if fontforge.nameFromUnicode(a[i]) in font:

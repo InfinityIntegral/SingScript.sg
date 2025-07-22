@@ -22,7 +22,7 @@ OS2Version: 4
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1740441635
-ModificationTime: 1753142448
+ModificationTime: 1753150483
 PfmFamily: 65
 TTFWeight: 400
 TTFWidth: 5
@@ -68,7 +68,7 @@ DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
 WidthSeparation: 50
-WinInfo: 0 27 9
+WinInfo: 27 27 9
 BeginPrivate: 6
 BlueValues 21 [0 0 300 300 467 467]
 OtherBlues 11 [-233 -233]
@@ -111,7 +111,7 @@ Grid
 0 0 m 24
  351 0 549 0 900 0 c 1048
 EndSplineSet
-BeginChars: 256 123
+BeginChars: 257 124
 
 StartChar: exclam
 Encoding: 33 33 0
@@ -3035,7 +3035,7 @@ SplineSet
  198 231 191 233 180 233 c 0
  156 233 144 226 144 212 c 0
 EndSplineSet
-Validated: 524801
+Validated: 513
 Kerns2: 2 -7 "kernGPOS-1" 3 -16 "kernGPOS-1" 5 -25 "kernGPOS-1" 7 -10 "kernGPOS-1" 8 -108 "kernGPOS-1" 9 -21 "kernGPOS-1" 10 -25 "kernGPOS-1" 11 -66 "kernGPOS-1" 12 -25 "kernGPOS-1" 13 -26 "kernGPOS-1" 14 -71 "kernGPOS-1" 17 -39 "kernGPOS-1" 18 -34 "kernGPOS-1" 20 -12 "kernGPOS-1" 21 -25 "kernGPOS-1" 22 -158 "kernGPOS-1" 26 -63 "kernGPOS-1" 27 -20 "kernGPOS-1" 30 -24 "kernGPOS-1" 31 -12 "kernGPOS-1" 32 -26 "kernGPOS-1" 33 -21 "kernGPOS-1" 34 -25 "kernGPOS-1" 35 -9 "kernGPOS-1" 36 -9 "kernGPOS-1" 38 -9 "kernGPOS-1" 40 -25 "kernGPOS-1" 41 -25 "kernGPOS-1" 42 -10 "kernGPOS-1" 43 -14 "kernGPOS-1" 44 -26 "kernGPOS-1" 45 -25 "kernGPOS-1" 47 -22 "kernGPOS-1" 48 -8 "kernGPOS-1" 49 -6 "kernGPOS-1" 50 -25 "kernGPOS-1" 51 -115 "kernGPOS-1" 53 -34 "kernGPOS-1" 54 -33 "kernGPOS-1" 55 -26 "kernGPOS-1" 56 -38 "kernGPOS-1" 57 -25 "kernGPOS-1" 58 -8 "kernGPOS-1" 59 -30 "kernGPOS-1" 60 -210 "kernGPOS-1" 63 -48 "kernGPOS-1" 64 -25 "kernGPOS-1" 66 -25 "kernGPOS-1" 67 -15 "kernGPOS-1" 68 -19 "kernGPOS-1" 70 -93 "kernGPOS-1" 71 -27 "kernGPOS-1" 72 -11 "kernGPOS-1" 73 -57 "kernGPOS-1" 75 -7 "kernGPOS-1" 76 -17 "kernGPOS-1" 77 -22 "kernGPOS-1" 78 -25 "kernGPOS-1" 79 -15 "kernGPOS-1" 80 -25 "kernGPOS-1" 81 -9 "kernGPOS-1" 82 -25 "kernGPOS-1" 88 -47 "kernGPOS-1" 90 -25 "kernGPOS-1" 91 -10 "kernGPOS-1" 92 -141 "kernGPOS-1" 93 -25 "kernGPOS-1"
 EndChar
 
@@ -4469,6 +4469,74 @@ SplineSet
  149 153 175 214 198 267 c 1
 EndSplineSet
 Validated: 1
+EndChar
+
+StartChar: SGmark
+Encoding: 256 888 123
+Width: 795
+Flags: W
+HStem: -225 59<288.018 500.602> -4 54<207.977 310.113 471.326 585.841> 116 52<520 613> 248 51<206.376 309.315 474.821 580.568> 462 60<297.377 502.306>
+VStem: 25 60<40.6405 250.119> 151 53<188.727 243.218> 316 53<54.5914 109.627> 384 54<84.7556 208.522> 713 57<44.4469 258.542>
+LayerCount: 2
+Fore
+SplineSet
+641 246 m 1
+ 605 208 l 1
+ 586 229 561 243 543 244 c 0
+ 539 244 535 244 531 244 c 0
+ 490 244 471 233 452 200 c 0
+ 442 183 438 164 438 146 c 0
+ 438 95 473 50 524 50 c 0
+ 525 50 l 0
+ 572 50 608 77 613 116 c 1
+ 520 116 l 1
+ 520 168 l 1
+ 670 167 l 1
+ 670 161 671 156 671 151 c 0
+ 671 59 600 -4 525 -4 c 0
+ 488 -4 450 12 418 46 c 0
+ 397 70 384 110 384 152 c 0
+ 384 161 385 171 386 180 c 0
+ 396 243 449 291 517 298 c 0
+ 521 298 525 299 529 299 c 0
+ 569 299 614 278 641 246 c 1
+327 213 m 1
+ 307 236 275 248 248 248 c 0
+ 224 248 204 238 204 218 c 0
+ 204 187 249 176 288 167 c 0
+ 308 162 326 157 335 151 c 0
+ 357 135 369 109 369 83 c 0
+ 369 60 360 38 341 24 c 0
+ 319 7 290 -1 259 -1 c 0
+ 243 -1 227 1 210 6 c 0
+ 189 12 159 36 137 64 c 1
+ 173 100 l 1
+ 203 66 242 48 271 48 c 0
+ 293 48 310 59 314 80 c 0
+ 315 85 316 89 316 92 c 0
+ 316 103 307 107 267 121 c 0
+ 256 125 245 129 234 132 c 0
+ 214 138 196 143 183 152 c 0
+ 161 167 151 188 151 209 c 0
+ 151 242 175 276 218 293 c 0
+ 228 297 240 299 253 299 c 0
+ 294 299 342 279 362 249 c 1
+ 327 213 l 1
+399 462 m 0
+ 226 461 85 319 85 145 c 0
+ 85 -26 224 -166 394 -166 c 0
+ 395 -166 395 -166 396 -166 c 0
+ 572 -165 713 -23 713 153 c 0
+ 713 323 572 462 401 462 c 0
+ 400 462 400 462 399 462 c 0
+400 522 m 0
+ 401 522 401 522 402 522 c 0
+ 604 522 770 353 770 147 c 0
+ 770 -58 604 -224 399 -225 c 0
+ 398 -225 398 -225 397 -225 c 0
+ 192 -225 25 -60 25 144 c 0
+ 25 351 193 521 400 522 c 0
+EndSplineSet
 EndChar
 EndChars
 EndSplineFont

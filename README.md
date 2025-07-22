@@ -12,12 +12,14 @@ All characters in the font are handwritten and copied online by me using the tem
 
 The kerningscripts folder contains scripts to automatically apply kerning to a font. There is also a usageinstructions.txt document in that folder which explains how to use the scripts.
 
+The encodingscripts folder contains scripts to bulk edit glyphs in your font file, specifically involving unused glyphs. See the usageinstructions.txt document in that folder for more information.
+
 ## planned for SingScript v1
 - [x] ASCII
 - [x] Latin supplementary
 - [x] .sg emoji at code 0378
-- [x] spaces
-- [x] punctuation
+- [ ] spaces
+- [ ] punctuation
 - [ ] subscripts and superscripts
 - [ ] Greek letters used in Sciences
 - [ ] full subscripts and superscripts using Unicode phonetics range (not Unicode compliant)
