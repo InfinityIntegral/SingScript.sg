@@ -1,0 +1,35 @@
+This document contains information about how SingScript.sg characters are generated from stroke-based handwriting
+
+expand glyphs:
+- set both widths to 67
+- set angle to 45
+- set anything that can be round to round
+
+autowidth:
+- set everything to 50
+
+enclosed glyphs:
+- copy paste circle from copyright logo
+- adjust main glyph to center
+
+superscript:
+- set transform center to glyph origin
+- turn on round to int
+- scale uniformly 66.66667%
+- transform +200 on Y
+
+subscript:
+- set transform center to glyph origin
+- turn on round to int
+- scale uniformly 66.66667%
+- transform -100 on Y
+
+postprocessing:
+- simplify
+- remove overlap
+- correct direction
+- balance
+- add extrema
+- add inflection points
+- round to int
+- auto hint
