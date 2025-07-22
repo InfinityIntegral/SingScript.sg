@@ -16,8 +16,8 @@ The kerningscripts folder contains scripts to automatically apply kerning to a f
 - [x] ASCII
 - [x] Latin supplementary
 - [x] .sg emoji at code 0378
-- [ ] spaces
-- [ ] punctuation
+- [x] spaces
+- [x] punctuation
 - [ ] subscripts and superscripts
 - [ ] Greek letters used in Sciences
 - [ ] full subscripts and superscripts using Unicode phonetics range (not Unicode compliant)

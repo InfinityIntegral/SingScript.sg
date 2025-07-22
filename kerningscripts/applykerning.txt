@@ -18,6 +18,13 @@ font = fontforge.activeFont();
 font.addLookup("kernGPOS", "gpos_pair", (), (("kern", (("DFLT", ("dflt",)),)),))
 font.addLookupSubtable("kernGPOS", "kernGPOS-1")
 
+for s in font:
+    glyph = font[s];
+    if glyph.unicode != -1:
+        correctName = fontforge.nameFromUnicode(glyph.unicode);
+        if correctName:
+            glyph.glyphname = correctName;
+
 for i in range(len(v)):
-    if chr(a[i]) in font:
-        font[chr(a[i])].addPosSub("kernGPOS-1", chr(b[i]), v[i]);
+    if fontforge.nameFromUnicode(a[i]) in font:
+        font[fontforge.nameFromUnicode(a[i])].addPosSub("kernGPOS-1", fontforge.nameFromUnicode(b[i]), v[i]);

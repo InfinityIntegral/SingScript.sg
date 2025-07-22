@@ -54,7 +54,7 @@ struct Line{
 };
 
 struct Glyph{
-    static constexpr int verticalSampleSize = 100;
+    static constexpr int verticalSampleSize = 1000;
     int unicode;
     double width;
     std::array<double, Glyph::verticalSampleSize>* leftBound;
