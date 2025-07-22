@@ -68,6 +68,7 @@ AntiAlias: 1
 FitToEm: 0
 WidthSeparation: 50
 WinInfo: 0 27 9
+OnlyBitmaps: 1
 BeginPrivate: 6
 BlueValues 21 [0 0 300 300 467 467]
 OtherBlues 11 [-233 -233]
@@ -111,6 +112,6 @@ Grid
  351 0 549 0 900 0 c 1048
 EndSplineSet
 TeXData: 1 0 0 346030 173015 115343 0 1048576 115343 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 1 0
+BeginChars: 0 0
 EndChars
 EndSplineFont
