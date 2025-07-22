@@ -20,7 +20,7 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [x] .sg emoji at code 0378
 - [x] spaces
 - [x] punctuation
-- [ ] subscripts and superscripts
+- [x] subscripts and superscripts
 - [ ] Greek letters used in Sciences
 - [ ] full subscripts and superscripts using Unicode phonetics range (not Unicode compliant)
 - [ ] selected letterlike symbols
