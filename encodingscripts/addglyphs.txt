@@ -5,4 +5,4 @@ endCode = 0xFF;
 
 font = fontforge.activeFont();
 for i in range(startCode, endCode + 1):
-    font.createChar(i, fontforge.nameFromUnicode(i));
+    glyph = font.createChar(i, fontforge.nameFromUnicode(i));
