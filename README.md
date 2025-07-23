@@ -22,8 +22,8 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [x] punctuation
 - [x] subscripts and superscripts
 - [x] Greek letters used in Sciences
-- [ ] full subscripts and superscripts using Unicode enclosed CJK range (not Unicode compliant)
-- [ ] selected letterlike symbols
+- [x] full subscripts and superscripts using Unicode enclosed CJK range (not Unicode compliant)
+- [x] selected letterlike symbols
 - [ ] arrows
 - [ ] Math symbols
 - [ ] miscellaneous technical symbols
