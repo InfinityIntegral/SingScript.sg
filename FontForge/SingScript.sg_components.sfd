@@ -22,7 +22,7 @@ OS2Version: 4
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1740441635
-ModificationTime: 1753394845
+ModificationTime: 1753404640
 PfmFamily: 65
 TTFWeight: 400
 TTFWidth: 5
@@ -111,7 +111,7 @@ Grid
  351 0 549 0 900 0 c 1048
 EndSplineSet
 TeXData: 1 0 0 346030 173015 115343 0 1048576 115343 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 50 49
+BeginChars: 100 53
 
 StartChar: NameMe.0
 Encoding: 0 -1 0
@@ -1210,6 +1210,98 @@ SplineSet
  25 384 40 400 58 400 c 4
  76 400 92 384 92 366 c 6
  92 150 l 6
+EndSplineSet
+EndChar
+
+StartChar: NameMe.49
+Encoding: 49 -1 49
+Width: 361
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+6 27 m 4
+ -1 44 7 64 24 71 c 4
+ 34 75 45 74 54 69 c 4
+ 189 -9 190 -9 190 -9 c 5
+ 230 142 l 4
+ 232 152 240 160 250 164 c 4
+ 267 171 287 163 294 146 c 4
+ 297 139 296 131 295 124 c 4
+ 243 -70 243 -69 243 -69 c 6
+ 242 -74 238 -85 224 -91 c 4
+ 215 -95 204 -96 194 -90 c 6
+ 21 11 l 6
+ 15 15 9 20 6 27 c 4
+EndSplineSet
+EndChar
+
+StartChar: NameMe.50
+Encoding: 50 -1 50
+Width: 361
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+67 146 m 4
+ 74 163 94 171 111 164 c 4
+ 121 160 129 152 131 142 c 4
+ 171 -9 172 -9 172 -9 c 5
+ 307 69 l 4
+ 316 74 327 75 337 71 c 4
+ 354 64 362 44 355 27 c 4
+ 352 20 346 15 340 11 c 4
+ 166 -89 167 -90 167 -90 c 6
+ 163 -93 152 -98 138 -92 c 4
+ 129 -88 121 -80 118 -69 c 6
+ 66 124 l 6
+ 65 131 64 139 67 146 c 4
+EndSplineSet
+EndChar
+
+StartChar: NameMe.51
+Encoding: 51 -1 51
+Width: 361
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+51 169 m 4
+ 49 177 50 185 52 192 c 6
+ 129 377 l 6
+ 133 388 142 393 152 396 c 4
+ 166 400 176 393 180 390 c 6
+ 180 390 180 390 339 268 c 4
+ 344 263 349 258 351 250 c 4
+ 356 233 345 215 328 210 c 4
+ 317 207 307 209 299 215 c 4
+ 175 310 l 5
+ 175 310 174 310 114 166 c 4
+ 110 157 102 149 91 146 c 4
+ 74 141 56 152 51 169 c 4
+EndSplineSet
+EndChar
+
+StartChar: NameMe.52
+Encoding: 52 -1 52
+Width: 361
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+10 250 m 4
+ 12 258 17 263 22 268 c 6
+ 181 390 l 6
+ 190 397 200 399 210 396 c 4
+ 224 392 230 382 232 377 c 6
+ 232 377 232 377 309 192 c 4
+ 311 185 312 177 310 169 c 4
+ 305 152 287 141 270 146 c 4
+ 259 149 251 157 247 166 c 4
+ 187 310 l 5
+ 187 310 186 310 62 215 c 4
+ 54 209 44 207 33 210 c 4
+ 16 215 5 233 10 250 c 4
 EndSplineSet
 EndChar
 EndChars
