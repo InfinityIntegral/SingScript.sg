@@ -14,7 +14,7 @@ The kerningscripts folder contains scripts to automatically apply kerning to a f
 
 The encodingscripts folder contains scripts to bulk edit glyphs in your font file, specifically involving unused glyphs. See the usageinstructions.txt document in that folder for more information.
 
-## planned for SingScript v1
+## planned for SingScript v2
 - [x] ASCII
 - [x] Latin supplementary
 - [x] .sg emoji at code 0378
@@ -24,7 +24,7 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [x] Greek letters used in Sciences
 - [x] full subscripts and superscripts using Unicode enclosed CJK range (not Unicode compliant)
 - [x] selected letterlike symbols
-- [ ] arrows
+- [x] arrows
 - [ ] Math symbols
 - [ ] miscellaneous technical symbols
 - [ ] enclosed alphanumerics (Optical Answer Sheet)
@@ -32,6 +32,7 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [ ] blocks (fake tables)
 - [ ] selected geometric shapes
 - [ ] selected miscellaneous symbols
+- [ ] selected miscellanrous shapes
 - [ ] selected dingbats
 - [ ] miscellaneous Math A
 - [ ] arrows A
