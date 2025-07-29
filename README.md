@@ -35,11 +35,12 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [ ] selected miscellanrous shapes
 - [ ] selected dingbats
 - [ ] miscellaneous Math A
-- [ ] arrows A
-- [ ] arrows B
-- [ ] selected miscellaneous symbols and arrows
-- [ ] miscellaneous Math B
-- [ ] supplementary Math
+- [x] arrows A
+- [x] arrows B
+- [x] miscellaneous arrows
+- [ ] selected miscellaneous symbols
+
+Future extensions may include the miscellaneous Math B and supplementary Math Unicode blocks.
 
 ## Credits
 - Git (https://git-scm.com/)
