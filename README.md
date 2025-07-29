@@ -34,7 +34,7 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [ ] selected miscellaneous symbols
 - [ ] selected miscellanrous shapes
 - [ ] selected dingbats
-- [ ] miscellaneous Math A
+- [x] miscellaneous Math A
 - [x] arrows A
 - [x] arrows B
 - [x] miscellaneous arrows
