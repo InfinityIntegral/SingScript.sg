@@ -25,7 +25,7 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [x] full subscripts and superscripts using Unicode enclosed CJK range (not Unicode compliant)
 - [x] selected letterlike symbols
 - [x] arrows
-- [ ] Math symbols
+- [x] Math symbols
 - [ ] miscellaneous technical symbols
 - [ ] enclosed alphanumerics (Optical Answer Sheet)
 - [ ] box drawing (fake tables)
