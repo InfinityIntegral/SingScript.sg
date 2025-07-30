@@ -32,7 +32,7 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [ ] blocks (fake tables)
 - [ ] selected geometric shapes
 - [ ] selected miscellaneous symbols
-- [ ] selected miscellanrous shapes
+- [ ] selected miscellaneous shapes
 - [ ] selected dingbats
 - [x] miscellaneous Math A
 - [x] arrows A
