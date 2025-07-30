@@ -42,9 +42,9 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 	- [x] table mockup characters
 	- [x] progress bar characters
 	- [x] shading and "loading" animation characters
-- [ ] "shapes" module
-	- [ ] geometric shapes
-	- [ ] emojis for academic use
+- [x] "shapes" module
+	- [x] geometric shapes
+	- [x] emojis for academic use
 - [ ] "everything" module
 	- [ ] all other modules combined together into one single font
 
