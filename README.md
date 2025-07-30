@@ -28,8 +28,8 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [x] Math symbols
 - [x] miscellaneous technical symbols
 - [x] enclosed alphanumerics (Optical Answer Sheet)
-- [ ] box drawing (fake tables)
-- [ ] blocks (fake tables)
+- [x] box drawing (fake tables)
+- [x] blocks (fake tables)
 - [ ] selected geometric shapes
 - [ ] selected miscellaneous symbols
 - [ ] selected miscellaneous shapes
@@ -38,7 +38,6 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [x] arrows A
 - [x] arrows B
 - [x] miscellaneous arrows
-- [ ] selected miscellaneous symbols
 
 Future extensions may include the miscellaneous Math B and supplementary Math Unicode blocks.
 
