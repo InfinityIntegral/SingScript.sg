@@ -45,6 +45,8 @@ The encodingscripts folder contains scripts to bulk edit glyphs in your font fil
 - [x] "shapes" module
 	- [x] geometric shapes
 	- [x] emojis for academic use
+- [x] "controlpics" module
+	- [x] control pictures
 - [ ] "everything" module
 	- [ ] all other modules combined together into one single font
 
