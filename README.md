@@ -15,29 +15,38 @@ The kerningscripts folder contains scripts to automatically apply kerning to a f
 The encodingscripts folder contains scripts to bulk edit glyphs in your font file, specifically involving unused glyphs. See the usageinstructions.txt document in that folder for more information.
 
 ## planned for SingScript v2
-- [x] ASCII
-- [x] Latin supplementary
-- [x] .sg emoji at code 0378
-- [x] spaces
-- [x] punctuation
-- [x] subscripts and superscripts
-- [x] Greek letters used in Sciences
-- [x] full subscripts and superscripts using Unicode enclosed CJK range (not Unicode compliant)
-- [x] selected letterlike symbols
-- [x] arrows
-- [x] Math symbols
-- [x] miscellaneous technical symbols
-- [x] enclosed alphanumerics (Optical Answer Sheet)
-- [x] box drawing (fake tables)
-- [x] blocks (fake tables)
-- [ ] selected geometric shapes
-- [ ] selected miscellaneous symbols
-- [ ] selected miscellaneous shapes
-- [ ] selected dingbats
-- [x] miscellaneous Math A
-- [x] arrows A
-- [x] arrows B
-- [x] miscellaneous arrows
+- [x] "core" module
+	- [x] ASCII
+	- [x] basic Mathematics
+	- [x] SG mark (code point 0378)
+- [x] "one" module
+	- [x] whitespace
+	- [x] punctuation
+	- [x] Unicode superscripts and subscripts
+- [x] "greek" module
+	- [x] Greek letters for Mathematics and Science, not Greek language
+- [x] "somescript" module
+	- [x] full superscripts and subscripts (using Unicode enclosed CJK range, not Unicode compliant)
+- [x] "letterlike" module
+	- [x] Mathematics and Science characters from Unicode "letterlike" block
+- [x] "arrows" module
+	- [x] arrows in logic and Mathematics, not for diagrams or maps
+- [x] "math" module
+	- [x] full Unicode "Mathematical Operators" block
+	- [x] full Unicode "Miscellaneous Mathematical Operators A" block
+- [x] "misctech" module
+	- [x] symbols for engineering, electricity, chemistry, and UI design
+- [x] "oas" module
+	- [x] Optical Answer Sheet bubbles
+- [x] "tables" module
+	- [x] table mockup characters
+	- [x] progress bar characters
+	- [x] shading and "loading" animation characters
+- [ ] "shapes" module
+	- [ ] geometric shapes
+	- [ ] emojis for academic use
+- [ ] "everything" module
+	- [ ] all other modules combined together into one single font
 
 Future extensions may include the miscellaneous Math B and supplementary Math Unicode blocks.
 
